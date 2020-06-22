@@ -9,9 +9,9 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles({
   root: {
     background: "linear-gradient(45deg, #30BE76 30%, #30BE76 90%)",
-    width: 239,
+    width: "100%",
     height: 50,
-    borderRadius: 7,
+    borderRadius: 5,
     boxShadow: "0px 6px 20px rgba(13, 51, 32, 0.1)",
   },
   label: {
@@ -22,9 +22,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function FilledButton() {
+export default function FilledButton(props) {
   const classes = useStyles();
 
+  const { text } = props;
   return (
     <Button
       classes={{
@@ -32,7 +33,7 @@ export default function FilledButton() {
         label: classes.label,
       }}
     >
-      Join Scratch
+      {text}
     </Button>
   );
 }

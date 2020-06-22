@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+/**@DESC mui*/
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-//scenes
-
+/**@DESC pages*/
+import Auth from "./scenes/Auth";
 import Root from "./scenes/Root";
 
 const theme = createMuiTheme({
@@ -18,7 +19,10 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <Router>
-      <Root />
+      <Switch>
+        <Route exact path="/" component={Root} />
+        <Route exact path="/auth" component={Auth} />
+      </Switch>
     </Router>
   );
 };

@@ -72,7 +72,7 @@ const Root = (params) => {
           </Typography>
 
           <span className={classes.firstBtn}>
-            <Link exact to="/auth">
+            <Link to="/auth">
               <FilledButton />
             </Link>
           </span>
